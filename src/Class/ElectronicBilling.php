@@ -238,15 +238,15 @@ class ElectronicBilling extends AfipWebService {
 	}
 
     /**
-     * Asks to AFIP Servers for aliquot availables {@see WS
-     * Specification item 4.7}
+     * Asks to AFIP Servers for Monto Cotizacion availables {@see WS
+     * Specification item 4.12}
      *
      * @since 0.7
      *
      * @return array All Monto Cotizacion availables
      **/
-    public function GetMonCotiz(){
-        return $this->ExecuteRequest('FEParamGetCotizacion')->ResultGet;
+    public function GetMonCotiz($idCurrency){
+        return $this->ExecuteRequest('FEParamGetCotizacion',['MonId' => $idCurrency])->ResultGet;
     }
 
 	/**
