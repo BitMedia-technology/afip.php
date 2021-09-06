@@ -237,6 +237,18 @@ class ElectronicBilling extends AfipWebService {
 		return $this->ExecuteRequest('FEParamGetTiposIva')->ResultGet->IvaTipo;
 	}
 
+    /**
+     * Asks to AFIP Servers for aliquot availables {@see WS
+     * Specification item 4.7}
+     *
+     * @since 0.7
+     *
+     * @return array All Monto Cotizacion availables
+     **/
+    public function GetMonCotiz(){
+        return $this->ExecuteRequest('FEParamGetCotizacion')->ResultGet;
+    }
+
 	/**
 	 * Asks to AFIP Servers for currencies availables {@see WS 
 	 * Specification item 4.8}
